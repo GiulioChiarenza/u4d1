@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Esercizio1 {
     public static void  main(String[] args){
         System.out.println("hello");
@@ -8,9 +10,9 @@ String risultatoConcat = sumAsString(2, 2);
         System.out.println(risultatoConcat);
 String[] array ={"Primo", "Secondo", "Terzo", "Quarto", "Quinto"};
         String newString = "new";
-        String[] newArray = new String[6];
+        String[] newArray = inserisciUnArray(array, newString);
 
-        System.out.println(newArray);
+        System.out.println(Arrays.toString(newArray));
 
 
 
@@ -23,7 +25,10 @@ String[] array ={"Primo", "Secondo", "Terzo", "Quarto", "Quinto"};
     }
 public static String[] inserisciUnArray(String[] array, String newString){
         String[] newArray =new String[6];
+        System.arraycopy(array, 0, newArray, 0, 2);
+        newArray[2]= newString;
+        System.arraycopy(array, 2, newArray, 3, array.length - 2);
 
-        return newArray[]
+        return newArray;
 }
 }
